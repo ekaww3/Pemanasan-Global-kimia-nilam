@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pemanasan Global &amp; Kimia Hijau</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --g: #2e5339;
+        --l: #7fb069;
+        --b: #a9d6e5;
+        --i: #faf7f0;
+        --o: #f08a3c;
+        --y: #f4b942;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--i);
+        color: #25322a;
+        font:
+          16px/1.65 Nunito,
+          system-ui,
+          sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        color: var(--g);
+        line-height: 1.2;
+        margin: 0.2em 0 0.5em;
+        font-weight: 800;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 9;
+        background: var(--g);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        align-items: center;
+        padding: 8px 16px;
+      }
+      nav b {
+        color: #fff;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      nav a:hover,
+      nav a.on {
+        background: var(--l);
+        color: var(--g);
+      }
+      .pg {
+        display: none;
+        max-width: 1000px;
+        margin: auto;
+        padding: 0 18px 48px;
+      }
+      .pg.show {
+        display: block;
+      }
+      .ic {
+        width: 44px;
+        height: 44px;
+        flex: none;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 20px;
+        align-items: center;
+        padding: 36px 0;
+      }
+      .band {
+        border-radius: 0 0 28px 28px;
+        padding: 28px;
+        color: #fff;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin: 0 -18px 24px;
+        background: linear-gradient(120deg, var(--g), #3f7d8f);
+      }
+      .band h1 {
+        color: #fff;
+        margin: 0;
+      }
+      .band small {
+        opacity: 0.9;
+      }
+      .warm {
+        background: linear-gradient(120deg, #3f7d8f, #6f9c8a 45%, var(--o));
+      }
+      .btn {
+        display: inline-block;
+        background: var(--l);
+        color: var(--g);
+        font-weight: 800;
+        font-size: 1.05rem;
+        padding: 14px 28px;
+        border-radius: 32px;
+        text-decoration: none;
+        border: 0;
+        cursor: pointer;
+        margin: 6px 6px 6px 0;
+      }
+      .btn:hover {
+        background: var(--g);
+        color: #fff;
+      }
+      .btn.alt {
+        background: var(--b);
+      }
+      .cta {
+        text-align: center;
+        padding: 24px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 18px;
+        border: 2px solid #e6efe2;
+      }
+      .card svg.ic {
+        margin-bottom: 6px;
+      }
+      a.card {
+        text-decoration: none;
+        color: inherit;
+      }
+      a.card:hover {
+        border-color: var(--l);
+        transform: translateY(-3px);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+      th {
+        background: var(--g);
+        color: #fff;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e6efe2;
+        vertical-align: top;
+        font-size: 0.95rem;
+      }
+      .sc {
+        overflow-x: auto;
+      }
+      details {
+        background: #fff;
+        border-radius: 14px;
+        padding: 12px 16px;
+        margin: 8px 0;
+        border: 2px solid #e6efe2;
+      }
+      summary {
+        font-weight: 800;
+        color: var(--g);
+        cursor: pointer;
+      }
+      .emb {
+        aspect-ratio: 16/9;
+        background: repeating-linear-gradient(
+          45deg,
+          #e8f3f8,
+          #e8f3f8 12px,
+          #f2f9fc 12px,
+          #f2f9fc 24px
+        );
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 16px;
+        color: var(--g);
+        font-weight: 600;
+        overflow: hidden;
+      }
+      .emb iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .tall {
+        aspect-ratio: auto;
+        height: 460px;
+      }
+      .bar {
+        height: 14px;
+        background: var(--l);
+        border-radius: 8px;
+        margin-top: 6px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #d5e5d0;
+        border-radius: 10px;
+        font: inherit;
+        background: #fff;
+      }
+      label {
+        font-weight: 600;
+        display: block;
+        margin: 10px 0 4px;
+      }
+      .res {
+        background: var(--g);
+        color: #fff;
+        border-radius: 18px;
+        padding: 20px;
+        margin-top: 14px;
+      }
+      .res .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 6px 0;
+        font-size: 0.9rem;
+      }
+      .res .row div {
+        background: var(--b);
+        height: 12px;
+        border-radius: 6px;
+      }
+      .fc {
+        background: #fff;
+        border: 2px dashed var(--l);
+        border-radius: 16px;
+        padding: 16px;
+        cursor: pointer;
+        min-height: 96px;
+      }
+      .fc span {
+        display: none;
+        margin-top: 8px;
+        color: var(--g);
+        font-weight: 800;
+      }
+      .fc.on {
+        background: #eaf5e4;
+      }
+      .fc.on span {
+        display: block;
+      }
+      .tabs {
+        display: flex;
+        gap: 8px;
+        margin: 20px 0;
+      }
+      .tabs .btn {
+        opacity: 0.6;
+      }
+      .tabs .btn.on {
+        opacity: 1;
+      }
+      .g2 {
+        background: #eef6ea;
+        border-radius: 18px;
+        padding: 8px 20px 20px;
+      }
+      .chk label {
+        font-weight: 400;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background: #fff;
+        padding: 10px 14px;
+        border-radius: 12px;
+        margin: 6px 0;
+      }
+      .chk input {
+        width: auto;
+      }
+      footer {
+        text-align: center;
+        padding: 24px;
+        color: #fff;
+        background: var(--g);
+        font-size: 0.9rem;
+      }
+      @media (max-width: 700px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+        .band {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .card {
+          transition: 0.2s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="leaf" viewBox="0 0 48 48">
+          <path d="M8 40C8 18 22 8 42 8c0 22-10 32-30 32z" fill="#7FB069" />
+          <path d="M8 40L30 18" stroke="#2E5339" stroke-width="3" fill="none" />
+        </symbol>
+        <symbol id="earth" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="20" fill="#A9D6E5" />
+          <path
+            d="M10 18c6-6 12-2 14 4s-6 8-4 14c-6-2-12-8-10-18zM30 12c6 0 10 6 10 12-4 0-8-2-10-6z"
+            fill="#7FB069"
+          />
+        </symbol>
+        <symbol id="sun" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="9" fill="#F4B942" />
+          <path
+            d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"
+            stroke="#F4B942"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="wind" viewBox="0 0 48 48">
+          <path d="M24 26v18" stroke="#2E5339" stroke-width="3" />
+          <g fill="#A9D6E5" stroke="#2E5339" stroke-width="1.5">
+            <path d="M24 26L22 6h4z" />
+            <path d="M24 26l17 10-2 3z" />
+            <path d="M24 26L7 36l2 3z" />
+          </g>
+        </symbol>
+        <symbol id="drop" viewBox="0 0 48 48">
+          <path
+            d="M24 5C16 16 12 22 12 29a12 12 0 0024 0c0-7-4-13-12-24z"
+            fill="#5AA9D6"
+          />
+        </symbol>
+        <symbol id="foot" viewBox="0 0 48 48">
+          <ellipse cx="24" cy="32" rx="9" ry="12" fill="#7FB069" />
+          <g fill="#2E5339">
+            <circle cx="14" cy="14" r="3.5" />
+            <circle cx="22" cy="9" r="3.5" />
+            <circle cx="30" cy="9" r="3.5" />
+            <circle cx="37" cy="15" r="3.5" />
+          </g>
+        </symbol>
+        <symbol id="mega" viewBox="0 0 48 48">
+          <path d="M6 20h10l18-10v28L16 28H6z" fill="#F4B942" />
+          <path
+            d="M38 18c3 3 3 9 0 12"
+            stroke="#2E5339"
+            stroke-width="3"
+            fill="none"
+          />
+        </symbol>
+        <symbol id="mol" viewBox="0 0 48 48">
+          <path
+            d="M24 24L10 14M24 24l14-10M24 24v16"
+            stroke="#2E5339"
+            stroke-width="3"
+          />
+          <circle cx="24" cy="24" r="7" fill="#7FB069" />
+          <circle cx="10" cy="14" r="5" fill="#A9D6E5" />
+          <circle cx="38" cy="14" r="5" fill="#A9D6E5" />
+          <circle cx="24" cy="40" r="5" fill="#F4B942" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <nav>
+      <b
+        ><svg class="ic" style="width: 30px; height: 30px">
+          <use href="#leaf" /></svg
+        >Kimia Hijau X</b
+      >
+      <a href="#p-home">Beranda</a><a href="#p1">Modul 1</a
+      ><a href="#p2">Modul 2</a><a href="#p3">Modul 3</a
+      ><a href="#p4">Modul 4</a><a href="#p5">Modul 5</a
+      ><a href="#pg">Panduan</a>
+    </nav>
+
+    <!-- BERANDA -->
+    <main class="pg" id="p-home">
+      <div class="hero">
+        <div>
+          <h1>Pemanasan Global &amp; Kimia Hijau</h1>
+          <p>
+            Kenapa cuaca makin tak menentu, dan apa yang bisa kita lakukan lewat
+            kimia? Belajar bersama selama 5 pertemuan: pahami masalahnya, hitung
+            jejak karbonmu, lalu rancang aksi nyata.
+          </p>
+          <a class="btn" href="#p1">Mulai Modul 1</a>
+        </div>
+        <svg
+          viewBox="0 0 320 300"
+          role="img"
+          aria-label="Ilustrasi Bumi dengan daun, matahari, dan turbin angin"
+        >
+          <defs>
+            <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F08A3C" />
+              <stop offset=".55" stop-color="#A9D6E5" />
+              <stop offset="1" stop-color="#5AA9D6" />
+            </linearGradient>
+          </defs>
+          <circle cx="160" cy="150" r="105" fill="url(#hg)" />
+          <path
+            d="M90 110c30-30 60-10 70 20s-30 40-20 70c-30-10-60-40-50-90zM185 90c30 0 50 30 50 60-20 0-40-10-50-30z"
+            fill="#7FB069"
+          />
+          <use href="#sun" x="235" y="10" width="70" height="70" />
+          <use href="#leaf" x="10" y="200" width="80" height="80" />
+          <use href="#wind" x="235" y="210" width="80" height="80" />
+          <use href="#drop" x="120" y="245" width="45" height="45" />
+        </svg>
+      </div>
+
+      <h2>Tujuan Pembelajaran</h2>
+      <div class="grid">
+        <div class="card">
+          <svg class="ic"><use href="#earth" /></svg><b>Memahami</b><br />Efek
+          rumah kaca, gas rumah kaca, dan penyebab pemanasan global (TP 1–2).
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#mol" /></svg><b>Menjelaskan</b
+          ><br />Prinsip kimia hijau dan kaitannya dengan energi alternatif
+          &amp; SDGs (TP 3).
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#foot" /></svg><b>Menganalisis</b
+          ><br />Jejak karbon harian dan studi kasus penerapan kimia hijau (TP
+          4–5).
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#mega" /></svg><b>Beraksi</b
+          ><br />Merancang dan mengampanyekan aksi nyata secara kolaboratif (TP
+          6–7).
+        </div>
+      </div>
+
+      <h2 style="margin-top: 28px">Pilih Modulmu</h2>
+      <div class="grid">
+        <a class="card" href="#p1"
+          ><svg class="ic"><use href="#earth" /></svg>
+          <h3>Modul 1</h3>
+          Wajah Bumi yang Memanas</a
+        >
+        <a class="card" href="#p2"
+          ><svg class="ic"><use href="#mol" /></svg>
+          <h3>Modul 2</h3>
+          Kimia Hijau &amp; Energi Alternatif</a
+        >
+        <a class="card" href="#p3"
+          ><svg class="ic"><use href="#foot" /></svg>
+          <h3>Modul 3</h3>
+          Kalkulator Jejak Karbon</a
+        >
+        <a class="card" href="#p4"
+          ><svg class="ic"><use href="#leaf" /></svg>
+          <h3>Modul 4</h3>
+          Studi Kasus Hijau</a
+        >
+        <a class="card" href="#p5"
+          ><svg class="ic"><use href="#mega" /></svg>
+          <h3>Modul 5</h3>
+          Aksi Kampanye Hijau</a
+        >
+      </div>
+    </main>
+
+    <!-- MODUL 1 -->
+    <main class="pg" id="p1">
+      <div class="band warm">
+        <svg class="ic" style="width: 80px; height: 80px">
+          <use href="#earth" />
+        </svg>
+        <div>
+          <small>Modul 1 · TP 1</small>
+          <h1>Wajah Bumi yang Memanas</h1>
+        </div>
+      </div>
+      <h2>Video Dokumenter</h2>
+      <div class="emb" id="e-video"></div>
+      <h2 style="margin-top: 28px">Ringkasan Materi</h2>
+      <details open>
+        <summary>Efek rumah kaca: alami vs berlebihan</summary>
+        <p>
+          <b>Alami:</b> radiasi matahari menembus atmosfer, dipantulkan Bumi
+          sebagai inframerah, lalu sebagian diserap dan dipancarkan kembali oleh
+          gas rumah kaca. Inilah yang menjaga suhu rata-rata Bumi ±15°C
+          (tanpanya sekitar −18°C).
+        </p>
+        <p>
+          <b>Berlebihan:</b> pembakaran bahan bakar fosil, deforestasi,
+          peternakan besar, dan limbah industri menambah gas rumah kaca,
+          sehingga lebih banyak panas terperangkap dan suhu naik. Inilah
+          pemanasan global.
+        </p>
+      </details>
+      <details open>
+        <summary>Gas rumah kaca utama</summary>
+        <div class="sc">
+          <table>
+            <tr>
+              <th>Gas</th>
+              <th>Sumber utama</th>
+              <th>Kontribusi relatif</th>
+            </tr>
+            <tr>
+              <td>CO₂</td>
+              <td>Bahan bakar fosil, deforestasi</td>
+              <td>Terbesar &amp; paling lama bertahan</td>
+            </tr>
+            <tr>
+              <td>CH₄</td>
+              <td>Peternakan, sawah, sampah organik</td>
+              <td>Perangkap panas per molekul jauh lebih tinggi dari CO₂</td>
+            </tr>
+            <tr>
+              <td>N₂O</td>
+              <td>Pupuk sintetis, pembakaran</td>
+              <td>Bertahan sangat lama</td>
+            </tr>
+            <tr>
+              <td>CFC/HFC</td>
+              <td>AC, kulkas, aerosol</td>
+              <td>Sangat kuat walau konsentrasi kecil</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+      <details>
+        <summary>Dampak pemanasan global</summary>
+        <ul>
+          <li>Kenaikan suhu rata-rata permukaan Bumi.</li>
+          <li>Es kutub dan gletser mencair, permukaan laut naik.</li>
+          <li>
+            Cuaca ekstrem: banjir, kekeringan panjang, badai lebih intens.
+          </li>
+          <li>Ancaman bagi keanekaragaman hayati dan ketahanan pangan.</li>
+        </ul>
+      </details>
+
+      <h2 style="margin-top: 28px">Peta Suhu Global</h2>
+      <div class="emb tall" id="e-map"></div>
+      <div
+        class="card"
+        style="
+          margin-top: 14px;
+          display: flex;
+          gap: 18px;
+          align-items: center;
+          flex-wrap: wrap;
+        "
+      >
+        <svg viewBox="0 0 100 100" width="110">
+          <circle id="gl" cx="50" cy="50" r="46" fill="#5AA9D6" />
+          <path
+            d="M25 35c10-12 22-4 25 8s-12 14-8 26c-14-6-22-18-17-34zM60 25c12 0 20 12 18 24-8 0-14-6-18-14z"
+            fill="#7FB069"
+            opacity=".85"
+          />
+        </svg>
+        <div style="flex: 1; min-width: 220px">
+          <b
+            >Geser tahun: <span id="yr">2023</span> · anomali ≈
+            <span id="an">+1,2</span>°C</b
+          >
+          <input
+            type="range"
+            id="sl"
+            min="0"
+            max="7"
+            value="7"
+            style="padding: 0"
+          /><small
+            >Nilai perkiraan anomali suhu global terhadap rata-rata 1951–1980
+            (data NASA GISS, dibulatkan untuk pembelajaran).</small
+          >
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" data-u="k1">Kerjakan Kuis Modul 1</a><br /><a
+          class="btn alt"
+          href="#p2"
+          >Lanjut ke Modul 2</a
+        >
+      </div>
+    </main>
+
+    <!-- MODUL 2 -->
+    <main class="pg" id="p2">
+      <div class="band">
+        <svg class="ic" style="width: 80px; height: 80px">
+          <use href="#mol" />
+        </svg>
+        <div>
+          <small>Modul 2 · TP 2 &amp; 3</small>
+          <h1>Kimia Hijau &amp; Energi Alternatif</h1>
+        </div>
+      </div>
+      <h2>Apa itu Kimia Hijau?</h2>
+      <p>
+        Pendekatan merancang produk dan proses kimia yang mengurangi atau
+        meniadakan zat berbahaya bagi manusia dan lingkungan. Enam prinsip
+        intinya:
+      </p>
+      <div class="grid">
+        <div class="card">
+          <svg class="ic"><use href="#leaf" /></svg><b>Pencegahan limbah</b
+          ><br />Lebih baik mencegah daripada mengolah limbah.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#mol" /></svg><b>Efisiensi atom</b
+          ><br />Semua atom pereaksi sebisa mungkin jadi produk.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#leaf" /></svg><b>Bahan baku terbarukan</b
+          ><br />Pilih bahan nabati/hayati, bukan fosil.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#sun" /></svg><b>Efisiensi energi</b
+          ><br />Reaksi pada suhu dan tekanan normal.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#drop" /></svg><b>Pelarut aman</b
+          ><br />Kurangi pelarut organik berbahaya.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#earth" /></svg><b>Mudah terdegradasi</b
+          ><br />Produk terurai setelah dipakai.
+        </div>
+      </div>
+      <h2 style="margin-top: 28px">Konvensional vs Hijau</h2>
+      <div class="sc">
+        <table>
+          <tr>
+            <th>Konvensional</th>
+            <th>Proses hijau</th>
+            <th>Manfaat</th>
+          </tr>
+          <tr>
+            <td>Plastik dari minyak bumi</td>
+            <td>Bioplastik/PLA dari pati jagung</td>
+            <td>Terurai alami, sampah plastik berkurang</td>
+          </tr>
+          <tr>
+            <td>Pelarut organik berbahaya</td>
+            <td>Pelarut air / CO₂ superkritis</td>
+            <td>Limbah beracun dan emisi VOC turun</td>
+          </tr>
+          <tr>
+            <td>Diesel fosil</td>
+            <td>Biodiesel dari minyak nabati</td>
+            <td>Bahan baku terbarukan, emisi karbon relatif lebih rendah</td>
+          </tr>
+        </table>
+      </div>
+      <h2 style="margin-top: 28px">Galeri Energi Terbarukan</h2>
+      <p>
+        Emisi daur hidup (g CO₂e per kWh), perkiraan median IPCC. Batu bara
+        sebagai pembanding: ±820.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <svg class="ic"><use href="#sun" /></svg><b>Surya</b><br />Sel surya
+          ubah cahaya jadi listrik.<br /><small>≈ 48 g</small>
+          <div class="bar" style="width: 6%"></div>
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#wind" /></svg><b>Angin</b><br />Angin
+          memutar turbin generator.<br /><small>≈ 12 g</small>
+          <div class="bar" style="width: 2%"></div>
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#drop" /></svg><b>Air</b><br />Aliran air
+          memutar turbin.<br /><small>≈ 24 g</small>
+          <div class="bar" style="width: 3%"></div>
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#earth" /></svg><b>Panas bumi</b><br />Uap
+          dari perut bumi memutar turbin.<br /><small>≈ 38 g</small>
+          <div class="bar" style="width: 5%"></div>
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#leaf" /></svg><b>Biomassa</b><br />Bahan
+          organik jadi bahan bakar/biogas.<br /><small>≈ 230 g</small>
+          <div class="bar" style="width: 28%"></div>
+        </div>
+      </div>
+      <p>
+        Kimia hijau dan energi alternatif mendukung <b>SDG 7</b> (Energi Bersih
+        dan Terjangkau) dan <b>SDG 13</b> (Penanganan Perubahan Iklim).
+      </p>
+      <div class="cta">
+        <a class="btn" data-u="k2">Kerjakan Kuis &amp; Esai Modul 2</a><br /><a
+          class="btn alt"
+          href="#p3"
+          >Lanjut ke Modul 3</a
+        >
+      </div>
+    </main>
+
+    <!-- MODUL 3 -->
+    <main class="pg" id="p3">
+      <div class="band">
+        <svg class="ic" style="width: 80px; height: 80px">
+          <use href="#foot" />
+        </svg>
+        <div>
+          <small>Modul 3 · TP 4</small>
+          <h1>Kalkulator Jejak Karbon</h1>
+        </div>
+      </div>
+      <p>
+        <b>Jejak karbon</b> adalah total emisi gas rumah kaca (dalam CO₂e) dari
+        aktivitas seseorang atau kelompok dalam periode tertentu. Rumus
+        dasarnya: <b>Emisi = jumlah aktivitas × faktor emisi</b>.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <svg class="ic"><use href="#sun" /></svg><b>Listrik</b
+          ><br />Pembangkit fosil, alat menyala terus.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#wind" /></svg><b>Transportasi</b
+          ><br />Bahan bakar kendaraan.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#leaf" /></svg><b>Pola makan</b
+          ><br />Peternakan &amp; distribusi pangan.
+        </div>
+        <div class="card">
+          <svg class="ic"><use href="#drop" /></svg><b>Sampah</b><br />Sampah
+          organik menghasilkan metana.
+        </div>
+      </div>
+      <h2 style="margin-top: 28px">Hitung Jejak Karbonmu (per bulan)</h2>
+      <div class="card">
+        <label>Listrik (kWh/bulan)</label
+        ><input id="c1" type="number" min="0" value="100" />
+        <label>Jarak tempuh (km/hari)</label
+        ><input id="c2" type="number" min="0" value="10" />
+        <label>Kendaraan</label
+        ><select id="c3">
+          <option value="0.1">Motor</option>
+          <option value="0.2">Mobil pribadi</option>
+          <option value="0.05">Transportasi umum</option>
+          <option value="0">Jalan kaki / sepeda</option>
+        </select>
+        <label>Makan daging merah (kali/minggu)</label
+        ><input id="c4" type="number" min="0" value="3" />
+        <label>Sampah tidak dipilah (kg/minggu)</label
+        ><input id="c5" type="number" min="0" value="3" />
+        <button class="btn" onclick="calc()" style="margin-top: 14px">
+          Hitung Jejak Karbon
+        </button>
+        <div class="res" id="rs" hidden></div>
+        <small
+          >Faktor emisi untuk pembelajaran: listrik 0,85 kg CO₂e/kWh; motor 0,1
+          dan mobil 0,2 kg/km; daging ±2,5 kg per porsi; sampah ±0,5 kg per kg.
+          Nilai nyata bervariasi menurut sumber data.</small
+        >
+      </div>
+      <h2 style="margin-top: 28px">Kalkulator Publik (opsional)</h2>
+      <div class="emb tall" id="e-calc"></div>
+      <h2 style="margin-top: 28px">Refleksi</h2>
+      <label for="rf"
+        >Tuliskan 2 langkah nyata untuk mengurangi jejak karbonmu</label
+      ><textarea id="rf" rows="4" placeholder="1. ... 2. ..."></textarea>
+      <div class="cta">
+        <a class="btn" data-u="k3">Kerjakan Kuis Reduksi Emisi</a><br /><a
+          class="btn alt"
+          href="#p4"
+          >Lanjut ke Modul 4</a
+        >
+      </div>
+    </main>
+
+    <!-- MODUL 4 -->
+    <main class="pg" id="p4">
+      <div class="band">
+        <svg class="ic" style="width: 80px; height: 80px">
+          <use href="#leaf" />
+        </svg>
+        <div>
+          <small>Modul 4 · TP 5</small>
+          <h1>Studi Kasus Hijau</h1>
+        </div>
+      </div>
+      <h2>Pilih Studi Kasus</h2>
+      <div class="grid" id="cases"></div>
+      <div class="card" id="cs" style="margin-top: 14px" hidden></div>
+      <h2 style="margin-top: 28px">Analisis Kasus</h2>
+      <ol>
+        <li>Prinsip kimia hijau apa yang diterapkan?</li>
+        <li>Apa dampak positifnya terhadap lingkungan (limbah/emisi)?</li>
+        <li>Apa tantangan penerapannya dalam skala lebih besar?</li>
+      </ol>
+      <div class="emb tall" id="e-form4"></div>
+      <h2 style="margin-top: 28px">Cocokkan Kasus &amp; Prinsip</h2>
+      <p>Klik kartu untuk melihat prinsip yang sesuai.</p>
+      <div class="grid">
+        <div class="fc" onclick="this.classList.toggle('on')">
+          Pewarna alami tekstil<span
+            >Bahan baku terbarukan &amp; pengurangan bahan berbahaya</span
+          >
+        </div>
+        <div class="fc" onclick="this.classList.toggle('on')">
+          Kemasan biodegradable restoran<span
+            >Desain produk mudah terdegradasi</span
+          >
+        </div>
+        <div class="fc" onclick="this.classList.toggle('on')">
+          Panel surya sekolah<span
+            >Efisiensi energi &amp; energi terbarukan</span
+          >
+        </div>
+        <div class="fc" onclick="this.classList.toggle('on')">
+          Sabun dari minyak jelantah<span
+            >Pencegahan limbah &amp; efisiensi atom</span
+          >
+        </div>
+        <div class="fc" onclick="this.classList.toggle('on')">
+          Kendaraan listrik bertenaga surya<span
+            >Efisiensi energi &amp; pengurangan emisi bahan bakar fosil</span
+          >
+        </div>
+      </div>
+      <div class="cta"><a class="btn" href="#p5">Lanjut ke Modul 5</a></div>
+    </main>
+
+    <!-- MODUL 5 -->
+    <main class="pg" id="p5">
+      <div class="band warm">
+        <svg class="ic" style="width: 80px; height: 80px">
+          <use href="#mega" />
+        </svg>
+        <div>
+          <small>Modul 5 · TP 6 &amp; 7</small>
+          <h1>Aksi Kampanye Hijau</h1>
+        </div>
+      </div>
+      <h2>Checklist Poster Kampanye</h2>
+      <div class="chk">
+        <label><input type="checkbox" />Judul dan isu yang diangkat</label
+        ><label
+          ><input type="checkbox" />Data pendukung (kalkulator Modul 3 / studi
+          kasus Modul 4)</label
+        ><label
+          ><input type="checkbox" />Solusi kimia hijau / energi
+          alternatif</label
+        ><label><input type="checkbox" />Ajakan aksi (call-to-action)</label
+        ><label><input type="checkbox" />Kesimpulan singkat</label>
+      </div>
+      <h2 style="margin-top: 28px">Galeri Poster Kelompok</h2>
+      <div class="emb tall" id="e-pad1"></div>
+      <h2 style="margin-top: 28px">Forum Diskusi</h2>
+      <p>
+        Beri minimal 1 komentar kritis pada poster kelompok lain dan jawab
+        minimal 1 pertanyaan di posternya sendiri, berdasarkan data atau konsep.
+      </p>
+      <div class="emb tall" id="e-pad2"></div>
+      <div class="cta">
+        <a class="btn" data-u="k5">Kerjakan Kuis Sumatif</a>
+      </div>
+      <h2>Rekap Nilai</h2>
+      <div class="sc">
+        <table>
+          <tr>
+            <th>Komponen</th>
+            <th>Bobot</th>
+          </tr>
+          <tr>
+            <td>Poster kampanye</td>
+            <td>30%</td>
+          </tr>
+          <tr>
+            <td>Forum diskusi</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>Kuis sumatif</td>
+            <td>50%</td>
+          </tr>
+        </table>
+      </div>
+      <div class="grid">
+        <div class="card"><b>≥ 90</b><br />Sangat Baik</div>
+        <div class="card"><b>80–89</b><br />Baik</div>
+        <div class="card"><b>70–79</b><br />Cukup</div>
+        <div class="card"><b>&lt; 70</b><br />Perlu Bimbingan</div>
+      </div>
+      <div class="cta">
+        <p>🎉 Selamat! Kamu sudah menyelesaikan semua modul.</p>
+        <a class="btn alt" href="#p-home">Kembali ke Beranda</a>
+      </div>
+    </main>
+
+    <!-- PANDUAN -->
+    <main class="pg" id="pg">
+      <h1 style="padding-top: 28px">Panduan Penggunaan Web</h1>
+      <div class="tabs">
+        <button class="btn on" id="tg" onclick="tab(1)">Untuk Guru</button
+        ><button class="btn" id="ts" onclick="tab(0)">Untuk Siswa</button>
+      </div>
+      <div class="g2" id="guru">
+        <h2>Gambaran Umum</h2>
+        <p>
+          Web memfasilitasi pembelajaran mendalam selama 5 pertemuan (Mindful →
+          Meaningful → Joyful &amp; Digital-Integrated). Guru berperan sebagai
+          fasilitator.
+        </p>
+        <h2>Persiapan</h2>
+        <ol>
+          <li>Pastikan internet stabil; siapkan hotspot cadangan.</li>
+          <li>
+            Uji kalkulator dan semua tautan Form/Padlet sehari sebelumnya.
+          </li>
+          <li>Bagi siswa ke kelompok 3–4 orang sejak pertemuan 1.</li>
+          <li>Siapkan rubrik cetak untuk studi kasus, poster, dan forum.</li>
+          <li>
+            Siapkan contoh data listrik, transportasi, dan sampah yang sesuai
+            konteks lokal.
+          </li>
+        </ol>
+        <h2>Peran Guru per Pertemuan</h2>
+        <div class="sc">
+          <table>
+            <tr>
+              <th>Pertemuan</th>
+              <th>Peran guru</th>
+            </tr>
+            <tr>
+              <td>1. Wajah Bumi yang Memanas</td>
+              <td>
+                Apersepsi cuaca, dampingi video, jelaskan efek rumah kaca, ulas
+                peta suhu.
+              </td>
+            </tr>
+            <tr>
+              <td>2. Kimia Hijau &amp; Energi Alternatif</td>
+              <td>
+                Demo perbandingan proses, pandu diskusi, beri umpan balik galeri
+                energi.
+              </td>
+            </tr>
+            <tr>
+              <td>3. Kalkulator Jejak Karbon</td>
+              <td>
+                Jelaskan konsep, dampingi pengisian data jujur, bahas kuis
+                reduksi emisi.
+              </td>
+            </tr>
+            <tr>
+              <td>4. Studi Kasus Hijau</td>
+              <td>
+                Pantau kelompok, beri umpan balik langsung sebelum jawaban
+                dikirim.
+              </td>
+            </tr>
+            <tr>
+              <td>5. Aksi Kampanye Hijau</td>
+              <td>
+                Fasilitasi showcase, moderasi forum, awasi kuis, rekap nilai.
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h2>Penilaian &amp; Rubrik</h2>
+        <ul>
+          <li>Nilai proses, bukan hanya hasil akhir.</li>
+          <li>
+            Kuis pilihan ganda terkoreksi otomatis di Google Form; verifikasi
+            skor.
+          </li>
+          <li>
+            Studi kasus, poster, dan forum dinilai manual dengan rubrik; beri
+            komentar singkat.
+          </li>
+          <li>Nilai akhir = Poster 30% + Forum 20% + Kuis 50%.</li>
+        </ul>
+        <h2>Tips</h2>
+        <ul>
+          <li>
+            Waktu terbatas? Prioritaskan video, kalkulator, studi kasus, kuis;
+            forum jadi tugas mandiri.
+          </li>
+          <li>Dorong data jujur di kalkulator.</li>
+          <li>Refleksi 5 menit di akhir tiap pertemuan.</li>
+          <li>Siapkan versi cetak/luring untuk kendala teknis.</li>
+        </ul>
+      </div>
+      <div class="g2" id="siswa" hidden>
+        <h2>Yang Perlu Disiapkan</h2>
+        <ul>
+          <li>Perangkat terhubung internet dengan browser terbaru.</li>
+          <li>Bergabung dengan kelompok dari guru.</li>
+          <li>
+            Buku catatan untuk istilah penting dan data listrik/transportasimu.
+          </li>
+        </ul>
+        <h2>Alur Belajar</h2>
+        <p>Ikuti modul berurutan, 1 sampai 5.</p>
+        <div class="sc">
+          <table>
+            <tr>
+              <th>Modul</th>
+              <th>Yang kamu lakukan</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Tonton video → baca materi → jelajahi peta suhu → kuis.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                Bandingkan proses konvensional vs hijau → pelajari 6 prinsip →
+                jelajahi galeri energi → kuis &amp; esai.
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                Isi kalkulator → bandingkan dengan teman → tulis refleksi →
+                kuis.
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                Baca studi kasus bersama kelompok → jawab 3 pertanyaan →
+                cocokkan kasus &amp; prinsip.
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>
+                Susun poster → unggah → komentari kelompok lain → jawab
+                pertanyaan → kuis sumatif.
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h2>Tips Belajar</h2>
+        <ul>
+          <li>
+            Isi kalkulator dengan jujur; tujuannya refleksi, bukan skor
+            terendah.
+          </li>
+          <li>Cari dulu prinsip kimia hijau yang relevan sebelum menjawab.</li>
+          <li>Pakai data di poster, bukan hanya slogan.</li>
+          <li>
+            Di forum, tanyakan konsep atau data, misalnya "kenapa aksi ini
+            menurunkan emisi?"
+          </li>
+        </ul>
+        <h2>Etika Belajar Digital</h2>
+        <ul>
+          <li>Kerjakan kuis mandiri dan jujur.</li>
+          <li>
+            Hormati pendapat teman; kritik dengan sopan dan berbasis data.
+          </li>
+          <li>Unggah hanya konten yang relevan.</li>
+          <li>Laporkan kendala teknis ke guru.</li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      Pemanasan Global &amp; Kimia Hijau · Kimia Kelas X (Fase E) · Pembelajaran
+      Mendalam
+    </footer>
+
+    <script>
+      // ===== ATUR TAUTAN DI SINI (isi dengan link embed / Google Form / Padlet) =====
+      const U = {
+        video: "",
+        map: "",
+        calc: "",
+        form4: "",
+        pad1: "",
+        pad2: "",
+        k1: "",
+        k2: "",
+        k3: "",
+        k5: "",
+      };
+      // contoh: video:"https://www.youtube.com/embed/ID_VIDEO", map:"https://climate.nasa.gov/interactives/climate-time-machine/"
+      const $ = (i) => document.getElementById(i);
+      const EM = {
+        video: [
+          "e-video",
+          "Video dokumenter: tempel link embed YouTube/Drive di U.video",
+        ],
+        map: [
+          "e-map",
+          "Peta suhu global: tempel link NASA Climate Time Machine di U.map",
+        ],
+        calc: ["e-calc", "Kalkulator publik / Google Form: isi U.calc"],
+        form4: ["e-form4", "Kolom jawaban: embed Google Form di U.form4"],
+        pad1: ["e-pad1", "Galeri Padlet: isi U.pad1"],
+        pad2: ["e-pad2", "Forum Padlet: isi U.pad2"],
+      };
+      for (const k in EM) {
+        const e = $(EM[k][0]);
+        e.innerHTML = U[k]
+          ? `<iframe src="${U[k]}" allowfullscreen loading="lazy" title="${k}"></iframe>`
+          : EM[k][1];
+      }
+      document.querySelectorAll("[data-u]").forEach((a) => {
+        const u = U[a.dataset.u];
+        a.href = u || "#";
+        if (u) a.target = "_blank";
+      });
+      function route() {
+        let h = (location.hash || "#p-home").slice(1);
+        if (!$(h)) h = "p-home";
+        document
+          .querySelectorAll(".pg")
+          .forEach((p) => p.classList.toggle("show", p.id === h));
+        document
+          .querySelectorAll("nav a")
+          .forEach((a) =>
+            a.classList.toggle("on", a.getAttribute("href") === "#" + h),
+          );
+        scrollTo(0, 0);
+      }
+      addEventListener("hashchange", route);
+      route();
+      const Y = [1880, 1920, 1950, 1980, 2000, 2010, 2020, 2023],
+        A = [-0.2, -0.25, -0.05, 0.25, 0.4, 0.65, 1.0, 1.2];
+      $("sl").oninput = (e) => {
+        const i = +e.target.value,
+          a = A[i],
+          t = Math.min(1, Math.max(0, (a + 0.3) / 1.5));
+        const c = [0, 1, 2].map((j) =>
+          Math.round(
+            [90, 240][0] * 0 +
+              ([90, 240][0] + (240 - 90) * t) * (j == 0 ? 1 : 0) +
+              (j == 1 ? 169 + (138 - 169) * t : 0) +
+              (j == 2 ? 214 + (60 - 214) * t : 0),
+          ),
+        );
+        $("gl").setAttribute("fill", `rgb(${c[0]},${c[1]},${c[2]})`);
+        $("yr").textContent = Y[i];
+        $("an").textContent = (a > 0 ? "+" : "") + String(a).replace(".", ",");
+      };
+      function calc() {
+        const v = (i) => +$(i).value || 0,
+          p = [
+            ["Listrik", v("c1") * 0.85],
+            ["Transportasi", v("c2") * 30 * v("c3")],
+            ["Pola makan", v("c4") * 4.3 * 2.5],
+            ["Sampah", v("c5") * 4.3 * 0.5],
+          ],
+          T = p.reduce((s, x) => s + x[1], 0),
+          m = Math.max(...p.map((x) => x[1]), 1),
+          top = p.reduce((a, b) => (b[1] > a[1] ? b : a));
+        const r = $("rs");
+        r.hidden = false;
+        r.innerHTML =
+          `<div style="font-size:2rem;font-weight:800">${T.toFixed(1)} kg CO₂e / bulan</div>` +
+          p
+            .map(
+              (x) =>
+                `<div class="row"><span style="width:100px">${x[0]}</span><div style="width:${Math.max(2, (x[1] / m) * 55)}%"></div>${x[1].toFixed(1)}</div>`,
+            )
+            .join("") +
+          `<p>Penyumbang terbesar: <b>${top[0]}</b>. Tulis 2 langkah untuk menurunkannya di kolom refleksi.</p>`;
+      }
+      const C = [
+        [
+          "Pewarna tekstil alami",
+          "Usaha tekstil kecil mengganti pewarna sintetis dengan pewarna dari kunyit, daun jati, dan indigo. Limbah pewarnaan lebih mudah terurai dan tidak meracuni sungai. Bahan bakunya tumbuhan yang dapat diperbarui. Tantangannya: warna kurang stabil dan pasokan tumbuhan terbatas untuk skala besar.",
+        ],
+        [
+          "Kemasan biodegradable restoran",
+          "Restoran mengganti kotak styrofoam/plastik dengan kemasan daun atau bioplastik. Kemasan terurai dalam hitungan bulan, bukan ratusan tahun. Ini mengurangi sampah yang menumpuk di lingkungan. Tantangannya: biaya lebih tinggi dan perlu pengelolaan sampah yang tepat agar benar-benar terurai.",
+        ],
+        [
+          "Panel surya sekolah",
+          "Sekolah memasang panel surya di atap untuk memenuhi sebagian kebutuhan listrik. Ketergantungan pada listrik PLN yang sebagian besar dari PLTU batu bara pun berkurang. Panel surya tidak membakar bahan bakar fosil saat beroperasi. Tantangannya: biaya awal besar dan produksi listrik bergantung pada cuaca.",
+        ],
+        [
+          "Sabun dari minyak jelantah",
+          "Warga mengolah minyak jelantah menjadi sabun cuci. Minyak tidak lagi dibuang sembarangan sehingga pencemaran air berkurang. Limbah dapur berubah menjadi produk bernilai guna. Tantangannya: pengumpulan minyak yang konsisten dan kontrol kualitas untuk produksi lebih besar.",
+        ],
+      ];
+      $("cases").innerHTML = C.map(
+        (c, i) =>
+          `<button class="card" style="text-align:left;font:inherit;cursor:pointer" onclick="cs(${i})"><svg class="ic"><use href="#${["leaf", "drop", "sun", "mol"][i]}"/></svg><b>${c[0]}</b><br><small>Klik untuk baca kasus</small></button>`,
+      ).join("");
+      function cs(i) {
+        const e = $("cs");
+        e.hidden = false;
+        e.innerHTML = `<h3>${C[i][0]}</h3><p>${C[i][1]}</p>`;
+        e.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+      function tab(g) {
+        $("guru").hidden = !g;
+        $("siswa").hidden = !!g;
+        $("tg").classList.toggle("on", !!g);
+        $("ts").classList.toggle("on", !g);
+      }
+    </script>
+  </body>
+</html>
